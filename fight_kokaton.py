@@ -44,14 +44,14 @@ class Bird:
     img0 = pg.transform.rotozoom(pg.image.load("fig/3.png"), 0, 0.9)
     img = pg.transform.flip(img0, True, False)
     imgs = {
-        (+5, 0): img,
-        (+5, -5): pg.transform.rotozoom(img, 45, 0.9),
-        (0, -5): pg.transform.rotozoom(img, 90, 0.9),
-        (-5, -5): pg.transform.rotozoom(img0, -45, 0.9),
-        (-5, 0): img0,
-        (-5, +5): pg.transform.rotozoom(img0, 45, 0.9),
-        (0, +5): pg.transform.rotozoom(img, -90, 0.9),
-        (+5, +5): pg.transform.rotozoom(img, -45, 0.9),
+        (+5, 0): img, # 右向き
+        (+5, -5): pg.transform.rotozoom(img, 45, 0.9), # 右上45度
+        (0, -5): pg.transform.rotozoom(img, 90, 0.9), # 上向き
+        (-5, -5): pg.transform.rotozoom(img0, -45, 0.9), # 左上45度
+        (-5, 0): img0, # 左向き
+        (-5, +5): pg.transform.rotozoom(img0, 45, 0.9), # 左下45度
+        (0, +5): pg.transform.rotozoom(img, -90, 0.9), # 下向き
+        (+5, +5): pg.transform.rotozoom(img, -45, 0.9), # 右下45度
     }
 
     def __init__(self, xy: tuple[int, int]):
